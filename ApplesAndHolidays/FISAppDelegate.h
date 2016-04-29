@@ -11,7 +11,7 @@
 - (NSArray *)holidaysInSeason:(NSString *)season
                   inDatabase:(NSDictionary *)database;
 
-- (BOOL)suppliesInHoliday:(NSString *)holiday
+- (NSArray *)suppliesInHoliday:(NSString *)holiday
                 inSeason:(NSString *)season
               inDatabase:(NSDictionary *)database;
 

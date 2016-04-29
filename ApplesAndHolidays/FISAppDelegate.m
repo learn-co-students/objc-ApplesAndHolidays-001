@@ -20,13 +20,15 @@
 
 - (NSArray *)holidaysInSeason:(NSString *)season
                    inDatabase:(NSDictionary *)database {
-    return nil;
+    NSArray*holidays=[database[season] allKeys];
+    return holidays;
 }
 
-- (BOOL)suppliesInHoliday:(NSString *)holiday
+- (NSArray *)suppliesInHoliday:(NSString *)holiday
                  inSeason:(NSString *)season
                inDatabase:(NSDictionary *)database {
-    return NO;
+    NSArray *supplies = database[season][holiday];
+    return supplies;
 }
 
 
