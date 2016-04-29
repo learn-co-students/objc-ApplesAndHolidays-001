@@ -20,10 +20,6 @@
      inDatabase:(NSDictionary *)database;
 
 - (BOOL)supply:(NSString *)supply
-     inSeason:(NSString *)season
-   inDatabase:(NSDictionary *)database;
-
-- (BOOL)supply:(NSString *)supply
    isInHoliday:(NSString *)holiday
       inSeason:(NSString *)season
     inDatabase:(NSDictionary *)database;

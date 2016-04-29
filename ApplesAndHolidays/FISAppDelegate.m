@@ -35,45 +35,43 @@
 - (BOOL)holiday:(NSString *)holiday
      isInSeason:(NSString *)season
      inDatabase:(NSDictionary *)database {
-    return NO;
+
+    BOOL inSeason = NO;
+    if ([[database[season] allKeys] containsObject:holiday]) {
+        inSeason = YES;
+    }
+    return inSeason;
 }
 
-
-- (BOOL)supply:(NSString *)supply
-      inSeason:(NSString *)season
-    inDatabase:(NSDictionary *)database {
-    return NO;
-}
 
 - (BOOL)supply:(NSString *)supply
    isInHoliday:(NSString *)holiday
       inSeason:(NSString *)season
     inDatabase:(NSDictionary *)database {
-    return NO;
+    BOOL inSupply = NO;
+    if([database[season][holiday] containsObject:supply]) {
+        inSupply = YES;
+    }
+    return inSupply;
 }
 
 - (NSDictionary *)addHoliday:(NSString *)holiday
                     toSeason:(NSString *)season
                   inDatabase:(NSDictionary *)database {
-    return nil;
+    NSMutableArray *supplies = [[NSMutableArray alloc] init];
+//    NSDictionary *newHoliday = @{holiday : supplies};
+    database[season][holiday] = supplies;
+    return database;
 }
 
 - (NSDictionary *)addSupply:(NSString *)supply
                   toHoliday:(NSString *)holiday
                    inSeason:(NSString *)season
                  inDatabase:(NSDictionary *)database {
-    return nil;
+    [database[season][holiday] addObject:supply];
+    return database;
 }
 
 
 
 @end
-/*
-NSPredicate *elderPredicate = [NSPredicate predicateWithFormat:@"age > 155"];
-NSArray *elders = [middleEarthers filteredArrayUsingPredicate:elderPredicate];
-
-for (NSDictionary *character in elders) {
-    NSLog(@"%@ is %@ years old.", character[@"name"], character[@"age"]);
-}
-
-*/
