@@ -101,7 +101,7 @@ describe(@"HolidaysSpec", ^{
                                        inDatabase:suppliesBySeasonAndHoliday]).to.equal(independenceDaySupplies);
         });
     });
-    
+
     describe(@"3 holiday:isInSeason:inDatabase:", ^{
         it(@"returns YES that Christmas Day is in Winter", ^{
             expect([appDelegate holiday:@"Christmas Day"
@@ -208,7 +208,6 @@ describe(@"HolidaysSpec", ^{
     });
     
 });
-    
 
 
 SpecEnd
